@@ -3,6 +3,7 @@
 @use './styles/global';
 @use './components/NavBar.scss';
 @use './styles/partials/colors';
+@use './components/VideoComments.scss';
 .App {
   text-align: center;
 }

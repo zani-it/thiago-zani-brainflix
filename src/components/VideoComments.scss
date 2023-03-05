@@ -1,5 +1,67 @@
-.video{
-    &__comments{
-        color:red
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/colors" as *;
+
+.comments {
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+  @include centered-column;
+  &__section {
+    width: 90vw;
+  }
+  &__input {
+    border-bottom: 2px solid $BrainFlix-Mercury;
+    &--box {
+      display: flex;
+      margin: 1rem 0;
     }
+    &-el {
+      padding: 1rem;
+      border: 1px solid $BrainFlix-Silver;
+      height: 7rem;
+      border-radius: 4px;
+      width: 75%;
+      margin-right: 1rem;
+      height: 5rem;
+      width: 88%;
+      resize: none;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -1.65rem;
+  }
+  &__item {
+    display: flex;
+    border-bottom: 2px solid $BrainFlix-Mercury;
+  }
+  &__avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: $BrainFlix-Silver;
+    margin: 1rem 1rem 0 0;
+  }
+  &__date {
+    color: $BrainFlix-Silver;
+  }
+  &__button {
+    background: url("../assets/images/Icons/add_comment.svg") no-repeat 0.5rem
+      center;
+    width: 100%;
+    min-width: 150px;
+    height: 40px;
+    margin: 1rem 0 0 0;
+    background-color: $BrainFlix-Blue;
+    border-radius: 4px;
+    border: none;
+    color: $BrainFlix-White;
+    font-weight: 700;
+  }
+  &__label {
+    color: $BrainFlix-Silver;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
 }
