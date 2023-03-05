@@ -12,7 +12,7 @@ export default function NavBar() {
             <img className="nav__logo" src={navLogo} alt="logo" />
             <div className="nav__input--container">
             <input className="nav__input-el" type="text" placeholder="Search" id="shearch video" />
-            <img className="nav__avatar" src={avatarImage} alt="Avatar" />
+            <div className="nav__avatar"/>
             </div>
             <button className="nav__button"> UPLOAD </button>
         </div>

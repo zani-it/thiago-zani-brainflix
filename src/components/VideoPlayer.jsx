@@ -32,8 +32,8 @@ export default function VideoPlayer(props) {
 
         <div className="video__details-right">
 
-          <div><img className="video__details--icon" src={viewsIcon}></img>{props.video.views}</div>
-          <div className="video__likes"><img className="video__details--icon" src={likesIcon}></img>{props.video.likes}</div>
+          <div><img alt="views icon" className="video__details--icon" src={viewsIcon}></img>{props.video.views}</div>
+          <div className="video__likes"><img alt="likes icon" className="video__details--icon" src={likesIcon}></img>{props.video.likes}</div>
 
         </div>
 
