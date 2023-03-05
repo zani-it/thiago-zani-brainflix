@@ -1,0 +1,40 @@
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'AvenirNextLTPro', sans-serif;
+    font-weight: 400; /* Light weight */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'AvenirNextLTPro', sans-serif;
+    font-weight: 700; /* Bold weight */
+  }
+  
+  strong {
+    font-family: 'AvenirNextLTPro', sans-serif;
+    font-weight: 600; /* Demi weight */
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+p {
+    //text style for videos with elipsis
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+  }
+
+  
+  
