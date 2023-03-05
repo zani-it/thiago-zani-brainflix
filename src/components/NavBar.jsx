@@ -15,6 +15,7 @@ export default function NavBar() {
             placeholder="Search"
             id="shearch video"
           />
+          <button className="nav__button--horizontal"> UPLOAD </button>
           <div className="nav__avatar" />
         </div>
         <button className="nav__button"> UPLOAD </button>
