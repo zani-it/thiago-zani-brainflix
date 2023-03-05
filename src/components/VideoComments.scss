@@ -7,14 +7,22 @@
   @include centered-column;
   &__section {
     width: 90vw;
+    @include centered-column;
+    @include for--desktop{
+        width: auto
+    }
   }
   &__input {
     @include divider;
+    width: 100%;
     &--box {
       display: flex;
       margin: 1rem 0;
       @include for--tablet {
         justify-content: space-between;
+      }
+      @include for--desktop {
+        border-bottom: none;
       }
     }
     &-streecher {
@@ -24,7 +32,7 @@
       padding: 1rem;
       border: 1px solid $BrainFlix-Silver;
       border-radius: 4px;
-      min-width: 240px;
+      min-width: 190px;
       width: 85%;
       margin-right: 1rem;
       height: 5rem;
@@ -52,10 +60,20 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: -1.65rem;
+    @include for--desktop{
+        margin-right: 1rem;
+    }
   }
   &__item {
     display: flex;
     @include divider;
+    @include for--desktop{
+        border-top: 1px solid $BrainFlix-Mercury;
+        margin-top: -1px;
+        width: 100%;
+        padding-right: 1.5rem;
+
+    }
   }
   &__avatar {
     height: 40px;
@@ -88,6 +106,9 @@
       margin: none;
       margin-bottom: -1px;
       width: 150px;
+    }
+    @include for--desktop{
+        margin-right: 1rem;
     }
   }
   &__label {

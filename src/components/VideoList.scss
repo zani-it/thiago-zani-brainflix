@@ -59,6 +59,12 @@
   }
   &__container {
     width: 90vw;
+    @include for--desktop{
+      width: auto;
+      border-left: 1px solid $BrainFlix-Mercury;
+      padding-left: 1rem;
+      margin-left: 1.5rem;
+    }
   }
   &__item {
     display: flex;

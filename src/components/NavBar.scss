@@ -17,11 +17,14 @@
   }
   &__content {
     @include centered-column;
-    padding-bottom: 1rem;
+    padding: 0.5rem;
     justify-content: space-between;
     width: 90vw;
     @include for--tablet{
         flex-direction: row;
+    }
+    @include for--desktop{
+        width: 80vw;
     }
   }
   &__input--container {
@@ -68,6 +71,9 @@
         &:hover {
           background-color: $BrainFlix-DarkBlue;
         }
+        @include for--desktop{
+            margin: 0 2rem 0 0.5rem;
+        }
     }
     
   }
@@ -81,7 +87,7 @@
     margin-right: 1rem;
     color: $BrainFlix-DarkBlack;
     @include for--tablet{
-        width: 240px;
+        width: 206px;
     }
   }
 }

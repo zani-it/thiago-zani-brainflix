@@ -1,0 +1,12 @@
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/colors" as *;
+
+.video-details {
+    &__container{
+        @include centered-column
+    }
+    @include for--desktop{
+        padding-right: 1rem;
+    }
+
+}

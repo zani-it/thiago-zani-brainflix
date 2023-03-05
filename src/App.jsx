@@ -1,4 +1,3 @@
-
 //import NavBar from "./components/NavBar";
 //import ContentArea from "./components/ContentArea";
 
@@ -10,10 +9,13 @@ import videos from "./data/video-details.json";
 //import VideoDetails from "./data/video-details.json";
 import VideoComments from "./components/VideoComments";
 import NavBar from "./components/NavBar";
+import VideoDetails from './components/VideoDetails';
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
-  const [videoList, setVideoList] = useState(videos.slice(1).sort((a, b) => a.timestamp - b.timestamp));
+  const [videoList, setVideoList] = useState(
+    videos.slice(1).sort((a, b) => a.timestamp - b.timestamp)
+  );
 
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
@@ -21,21 +23,34 @@ function App() {
   };
 
   return (
-    
     <div>
-    <header>
-      <div>
-        <NavBar/>
-      </div>
-    </header>
+      <header>
+        <div>
+          <NavBar />
+        </div>
+      </header>
       <div>
         <VideoPlayer video={selectedVideo} />
       </div>
-      <div>
-        <VideoComments comments={selectedVideo.comments} video={selectedVideo}/>
-      </div>
-      <div>
-         <VideoList videos={videos} selectedVideo={selectedVideo} onSelectVideo={handleVideoSelect} />
+      <div className="page__desktop-layout">
+        <div className="page__container">
+          <div>
+            <VideoDetails
+              video={selectedVideo} 
+            />
+            <VideoComments
+              comments={selectedVideo.comments}
+              video={selectedVideo}
+            />
+          </div>
+          <div>
+            <VideoList
+              videos={videos}
+              selectedVideo={selectedVideo}
+              onSelectVideo={handleVideoSelect}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

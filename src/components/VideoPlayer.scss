@@ -4,12 +4,25 @@
 .video {
   font-size: 0.95rem;
   line-height: 1.25rem;
-
+    &__container{
+        @include centered-column;
+        width: 100vw;
+        background-color: $BrainFlix-DarkBlack;
+    }
   &__section {
     @include centered-column;
   }
   &__player {
     width: 100vw;
+
+    @include for--tablet{
+        width: 90vw;
+        position: relative;
+    }
+    @include for--desktop{
+        width: 70vw;
+        position: relative;
+    }
   }
   &__card {
     width: 90vw;
@@ -21,6 +34,11 @@
         justify-content: space-between;
         margin-top: -1rem;
     }
+    @include for--desktop{
+        width: 100%;
+        align-self: flex-start;
+        padding-right: 2.5rem;
+    }
   }
   &__title {
     font-size: 1.8rem;
@@ -31,12 +49,19 @@
     @include for--tablet{
         border-bottom: none;
     }
+    @include for--desktop{
+        width: auto;
+        align-self:flex-start;
+    }
   }
   &__description {
     @include centered-column;
     width: 90vw;
     font-size: 0.95rem;
     line-height: 1.4rem;
+    @include for--desktop{
+        width: auto;
+    }
   }
   &__channel {
     font-weight: 700;
@@ -62,6 +87,9 @@
       margin-right: 30vw;
       @include for--tablet{
         display: flex;
+        @include for--desktop{
+            margin-right: 10vw;
+        }
     }
     }
 
