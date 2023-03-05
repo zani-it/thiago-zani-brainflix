@@ -1,57 +1,56 @@
-@use '../styles/partials/mixins' as*;
-@use '../styles/partials/colors' as*;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/colors" as *;
 
 .nav {
+  @include centered-column;
 
+  &__logo {
+    height: 25px;
+    margin: 1rem 0;
+  }
+  &__avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-image: url("../assets/images/Mohan-muruge.jpg");
+    background-size: cover;
+  }
+  &__content {
     @include centered-column;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+    width: 90vw;
+  }
+  &__input--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-    &__logo{
-        height: 25px;
-        margin: 1rem 0;
+  &__button {
+    background: url("../assets/images/Icons/upload.svg") no-repeat 0.5rem center;
+    width: 100%;
+    min-width: 150px;
+    height: 40px;
+    margin: 1rem 0 0 0;
+    background-color: $BrainFlix-Blue;
+    border-radius: 4px;
+    border: none;
+    color: $BrainFlix-White;
+    font-weight: 700;
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
     }
-    &__avatar{
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background-image: url("../assets/images/Mohan-muruge.jpg");
-        background-size: cover;
-
-    }
-    &__content{
-        @include centered-column;
-        padding-bottom: 1rem;
-        justify-content: space-between;
-        width: 90vw;
-
-    }
-    &__input--container{
-        display:flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    &__button{
-        background: url("../assets/images/Icons/upload.svg") no-repeat 0.5rem center;
-        width: 100%;
-        min-width: 150px;
-        height: 40px;
-        margin: 1rem 0 0 0; 
-        background-color: $BrainFlix-Blue;
-        border-radius: 4px;
-        border: none;
-        color: $BrainFlix-White;
-        font-weight: 700;
-    }
-    &__input-el{
-        background: url("../assets/images/Icons/search.svg") no-repeat 0.5rem center;
-        padding-left: 30px;
-        border: 1px solid $BrainFlix-Silver;
-        height: 36px;
-        border-radius: 4px;
-        width: 75%;
-        margin-right: 1rem;
-        
-  
-    }
+  }
+  &__input-el {
+    background: url("../assets/images/Icons/search.svg") no-repeat 0.5rem center;
+    padding-left: 30px;
+    border: 1px solid $BrainFlix-Silver;
+    height: 36px;
+    border-radius: 4px;
+    width: 75%;
+    margin-right: 1rem;
+    color: $BrainFlix-DarkBlack;
+  }
 }
