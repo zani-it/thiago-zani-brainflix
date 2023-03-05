@@ -8,26 +8,32 @@ export default function VideoList(props) {
     : videos;
 
   return (
-    <nav>
-      <div>
-        <h2>NEXT VIDEOS</h2>
+    <nav className="list">
+      <div className="list__container">
+      <div >
+        <h2 className="list__title">NEXT VIDEOS</h2>
       </div>
-      <ul>
-        {filteredVideos.map((video) => (
-          <div key={video.id}>
-            <img
-              className="video__thumb"
-              src={video.image}
-              alt={video.title}
-              onClick={() => onSelectVideo(video)}
-            />
-            <div>
-              <div>{video.title}</div>
-              <div>{video.channel}</div>
+      <div>
+          
+            {filteredVideos.map((video) => (
+              <div className="video__thumb--container">
+              <div className="list__item" key={video.id}>
+                <img
+                  className="video__thumb"
+                  src={video.image}
+                  alt={video.title}
+                  onClick={() => onSelectVideo(video)}
+                />
+            </div>
+            <div className="video__thumb--details">
+              <div className="video__thumb--title" >{video.title}</div>
+              <div className="video__thumb--channel">{video.channel}</div>
             </div>
           </div>
         ))}
-      </ul>
+      
+      </div>
+      </div>
     </nav>
   );
 }

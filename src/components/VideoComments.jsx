@@ -1,5 +1,6 @@
 import React from "react";
 import avatarImage from "..//assets/images/Mohan-muruge.jpg";
+import avatarPlaceHolder from "..//assets/images/placeholder.png";
 
 export default function VideoComments({ comments }) {
   return (
@@ -37,7 +38,7 @@ export default function VideoComments({ comments }) {
             <div className="comments__item">
               <img
                 className="comments__avatar"
-                src={avatarImage}
+                src={avatarPlaceHolder}
                 alt="Avatar"
               />
               <div>
