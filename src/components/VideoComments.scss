@@ -9,26 +9,25 @@
     width: 90vw;
   }
   &__input {
-    border-bottom: 2px solid $BrainFlix-Mercury;
+    @include divider;
     &--box {
       display: flex;
       margin: 1rem 0;
       @include for--tablet {
         justify-content: space-between;
-    }
+      }
     }
     &-streecher {
-        width: 100%;
+      width: 100%;
     }
     &-el {
       padding: 1rem;
       border: 1px solid $BrainFlix-Silver;
-      height: 7rem;
       border-radius: 4px;
-      width: 75%;
+      min-width: 240px;
+      width: 85%;
       margin-right: 1rem;
       height: 5rem;
-      width: 88%;
       resize: none;
 
       @include for--tablet {
@@ -36,19 +35,17 @@
         padding: 10px;
         width: 92%;
         margin-right: 0;
+      }
     }
+    &--horizontal {
+      width: 100%;
+      @include for--tablet {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin-top: -8px;
+      }
     }
-    &--horizontal{
-        @include for--tablet {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: end;
-            margin-top: -8px;
-        }
-
-    }
-   
   }
   &__header {
     display: flex;
@@ -58,7 +55,7 @@
   }
   &__item {
     display: flex;
-    border-bottom: 2px solid $BrainFlix-Mercury;
+    @include divider;
   }
   &__avatar {
     height: 40px;
@@ -66,6 +63,8 @@
     border-radius: 50%;
     background-color: $BrainFlix-Silver;
     margin: 1rem 1rem 0 0;
+    object-fit: cover;
+    object-position: left;
   }
   &__date {
     color: $BrainFlix-Silver;
@@ -86,9 +85,9 @@
       background-color: $BrainFlix-DarkBlue;
     }
     @include for--tablet {
-        margin: none;
-        margin-bottom: -1px;
-        width: 150px;
+      margin: none;
+      margin-bottom: -1px;
+      width: 150px;
     }
   }
   &__label {
@@ -97,5 +96,3 @@
     font-weight: 700;
   }
 }
-
-

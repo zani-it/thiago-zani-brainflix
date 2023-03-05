@@ -1,3 +1,5 @@
+@use './colors' as*;
+
 @mixin centered-column {
   display: flex;
   flex-direction: column;
@@ -14,4 +16,8 @@
   @media (min-width: 1280px) {
     @content;
   }
+}
+
+@mixin divider {
+  border-bottom: 1px solid $BrainFlix-Mercury;
 }
