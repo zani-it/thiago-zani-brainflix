@@ -17,6 +17,10 @@
     display: flex;
     border-bottom: 2px solid $BrainFlix-Mercury;
     padding-bottom: 1rem;
+    @include for--tablet{
+        justify-content: space-between;
+        margin-top: -1rem;
+    }
   }
   &__title {
     font-size: 1.8rem;
@@ -24,6 +28,9 @@
     font-weight: 700;
     border-bottom: 2px solid $BrainFlix-Mercury;
     padding-bottom: 1rem;
+    @include for--tablet{
+        border-bottom: none;
+    }
   }
   &__description {
     @include centered-column;
@@ -33,21 +40,36 @@
   }
   &__channel {
     font-weight: 700;
+    @include for--tablet{
+        margin-right: 2rem;
+    }
   }
   &__date {
     color: $BrainFlix-Silver;
     margin-top: 1rem;
+    @include for--tablet{
+        margin: 0;
+    }
   }
   &__likes {
     margin-top: 1rem;
+    @include for--tablet{
+        margin: 0 0 0 2rem;
+    }
   }
   &__details {
     &-left {
       margin-right: 30vw;
+      @include for--tablet{
+        display: flex;
+    }
     }
 
     &-right {
       color: $BrainFlix-Silver;
+      @include for--tablet{
+        display: flex;
+    }
     }
     &--icon {
       margin-right: 10px;
