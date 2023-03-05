@@ -1,5 +1,7 @@
 import React from "react";
 import VideoComments from "./VideoComments";
+import viewsIcon from "../assets/images/Icons/views.svg";
+import likesIcon from "../assets/images/Icons/likes.svg";
 
 export default function VideoPlayer(props) {
   if (!props.video) {
@@ -8,31 +10,35 @@ export default function VideoPlayer(props) {
 
   return (
     <main className="video__section">  
-      <video className="video__player" poster={props.video.image} alt={props.video.name}>
+      <video className="video__player" poster={props.video.image} alt={props.video.name} controls>
       </video>
-      <h2>{props.video.title}</h2>
-      <article className="video__card">
+      <h2 className="video__title">{props.video.title}</h2>
+      <div className="video__card">
 
-        <div>
-          <div>
-            {props.video.channel}
+        <div className="video__details-left">
+
+          <div className="video__channel">
+            By {props.video.channel}
           </div>
-          <div>
+          <div className="video__date">
             {new Date(props.video.timestamp).toLocaleDateString("en-US", {
               day: "2-digit",
               month: "2-digit",
               year: "numeric",
             })}
           </div>
+
         </div>
 
-        <div>
-          <div>{props.video.views}</div>
-          <div>{props.video.likes}</div>
+        <div className="video__details-right">
+
+          <div><img className="video__details--icon" src={viewsIcon}></img>{props.video.views}</div>
+          <div className="video__likes"><img className="video__details--icon" src={likesIcon}></img>{props.video.likes}</div>
+
         </div>
 
-        <p className="video__description">{props.video.description}</p>
-      </article>
+      </div>
+      <p className="video__description">{props.video.description}</p>
     </main>
   );
 }

@@ -1,6 +1,10 @@
-@use '../styles/partials/mixins' as*;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/colors" as *;
 
 .video {
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+
   &__section {
     @include centered-column;
   }
@@ -10,5 +14,43 @@
   &__card {
     width: 90vw;
     overflow-wrap: break-word;
+    display: flex;
+    border-bottom: 2px solid $BrainFlix-Mercury;
+    padding-bottom: 1rem;
+  }
+  &__title {
+    font-size: 1.8rem;
+    width: 90vw;
+    font-weight: 700;
+    border-bottom: 2px solid $BrainFlix-Mercury;
+    padding-bottom: 1rem;
+  }
+  &__description {
+    @include centered-column;
+    width: 90vw;
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+  &__channel {
+    font-weight: 700;
+  }
+  &__date {
+    color: $BrainFlix-Silver;
+    margin-top: 1rem;
+  }
+  &__likes {
+    margin-top: 1rem;
+  }
+  &__details {
+    &-left {
+      margin-right: 30vw;
+    }
+
+    &-right {
+      color: $BrainFlix-Silver;
+    }
+    &--icon {
+      margin-right: 10px;
+    }
   }
 }
