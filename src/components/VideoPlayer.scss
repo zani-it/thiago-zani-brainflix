@@ -1,0 +1,14 @@
+@use '../styles/partials/mixins' as*;
+
+.video {
+  &__section {
+    @include centered-column;
+  }
+  &__player {
+    width: 100vw;
+  }
+  &__card {
+    width: 90vw;
+    overflow-wrap: break-word;
+  }
+}
