@@ -8,10 +8,17 @@
     object-fit: cover;
     max-height: 65px;
     margin-right: 1rem;
+    @include for--tablet{
+      height: 75px;
+      max-height: 75px;
+    }
     &--container {
       margin-bottom: -1rem;
       display: flex;
       align-items: center;
+      @include for--tablet{
+        margin-bottom: 0;
+      }
     }
     &--title {
       display: -webkit-box;
@@ -33,6 +40,10 @@
       flex-direction: column;
       justify-content: space-between;
       height: 65px;
+      @include for--tablet{
+        width: 20vw;
+        height: 70px
+      }
     }
   }
 }

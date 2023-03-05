@@ -16,17 +16,19 @@ export default function VideoComments({ comments }) {
                 alt="Avatar"
               />
             </div>
-            <div>
-              <label for="comment-input" class="comments__label">
-                JOIN THE CONVERSATION
-              </label>
-              <textarea
-                class="comments__input-el"
-                type="text"
-                id="comment-input"
-                name="comment box"
-                placeholder="Add a new comment"
-              ></textarea>
+            <div className="comments__input--horizontal">
+              <div className="comments__input-streecher">
+                <label for="comment-input" class="comments__label">
+                  JOIN THE CONVERSATION
+                </label>
+                <textarea
+                  class="comments__input-el"
+                  type="text"
+                  id="comment-input"
+                  name="comment box"
+                  placeholder="Add a new comment"
+                ></textarea>
+              </div>
               <span id="form-error"></span>
               <button className="comments__button"> COMMENT</button>
             </div>

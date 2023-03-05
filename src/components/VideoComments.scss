@@ -13,6 +13,12 @@
     &--box {
       display: flex;
       margin: 1rem 0;
+      @include for--tablet {
+        justify-content: space-between;
+    }
+    }
+    &-streecher {
+        width: 100%;
     }
     &-el {
       padding: 1rem;
@@ -24,7 +30,25 @@
       height: 5rem;
       width: 88%;
       resize: none;
+
+      @include for--tablet {
+        height: 18px;
+        padding: 10px;
+        width: 92%;
+        margin-right: 0;
     }
+    }
+    &--horizontal{
+        @include for--tablet {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: end;
+            margin-top: -8px;
+        }
+
+    }
+   
   }
   &__header {
     display: flex;
@@ -61,6 +85,11 @@
     &:hover {
       background-color: $BrainFlix-DarkBlue;
     }
+    @include for--tablet {
+        margin: none;
+        margin-bottom: -1px;
+        width: 150px;
+    }
   }
   &__label {
     color: $BrainFlix-Silver;
@@ -68,3 +97,5 @@
     font-weight: 700;
   }
 }
+
+
