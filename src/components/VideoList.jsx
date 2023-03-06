@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function VideoList(props) {
-  const { videos, selectedVideo, onSelectVideo, video } = props;
+  const { videos, selectedVideo, onSelectVideo } = props;
 
   const filteredVideos = selectedVideo
     ? videos.filter((video) => video.id !== selectedVideo.id)

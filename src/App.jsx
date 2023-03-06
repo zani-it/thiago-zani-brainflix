@@ -9,7 +9,7 @@ import videos from "./data/video-details.json";
 //import VideoDetails from "./data/video-details.json";
 import VideoComments from "./components/VideoComments";
 import NavBar from "./components/NavBar";
-import VideoDetails from './components/VideoDetails';
+import VideoDetails from "./components/VideoDetails";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
@@ -35,9 +35,7 @@ function App() {
       <div className="page__desktop-layout">
         <div className="page__container">
           <div>
-            <VideoDetails
-              video={selectedVideo} 
-            />
+            <VideoDetails video={selectedVideo} />
             <VideoComments
               comments={selectedVideo.comments}
               video={selectedVideo}

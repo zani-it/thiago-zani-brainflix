@@ -1,4 +1,4 @@
-@use './colors' as*;
+@use "./colors" as *;
 
 @mixin centered-column {
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 @mixin for--tablet {
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     @content;
   }
 }

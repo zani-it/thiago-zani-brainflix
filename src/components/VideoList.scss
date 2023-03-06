@@ -8,7 +8,7 @@
     object-fit: cover;
     max-height: 65px;
     margin-right: 1rem;
-    @include for--tablet{
+    @include for--tablet {
       height: 75px;
       max-height: 75px;
     }
@@ -16,7 +16,7 @@
       margin-bottom: -1rem;
       display: flex;
       align-items: center;
-      @include for--tablet{
+      @include for--tablet {
         margin-bottom: 0;
       }
     }
@@ -40,9 +40,9 @@
       flex-direction: column;
       justify-content: space-between;
       height: 65px;
-      @include for--tablet{
-        width: 20vw;
-        height: 70px
+      @include for--tablet {
+        width: 25vw;
+        height: 70px;
       }
     }
   }
@@ -59,7 +59,7 @@
   }
   &__container {
     width: 90vw;
-    @include for--desktop{
+    @include for--desktop {
       width: auto;
       border-left: 1px solid $BrainFlix-Mercury;
       padding-left: 1rem;
