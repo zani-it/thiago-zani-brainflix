@@ -50,6 +50,9 @@
 }
 .list {
   @include centered-column;
+  width: 25vw;
+  align-items: start;
+
 
   &__title {
     color: $BrainFlix-Silver;
@@ -59,9 +62,9 @@
     margin-bottom: 0.5rem;
   }
   &__container {
-    width: 90vw;
+    width: 90VW;
     @include for--desktop {
-      width: auto;
+      width: 90%;
       border-left: 1px solid $BrainFlix-Mercury;
       padding-left: 1rem;
       margin-left: 1.5rem;
