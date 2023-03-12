@@ -1,21 +1,15 @@
-//import NavBar from "./components/NavBar";
-//import ContentArea from "./components/ContentArea";
-
 import "./App.scss";
 import React, { useState } from "react";
 import VideoList from "./components/VideoList/VideoList";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import videos from "./data/video-details.json";
-//import VideoDetails from "./data/video-details.json";
 import VideoComments from "./components/VideoComments/VideoComments";
 import NavBar from "./components/NavBar/NavBar";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
-  const [videoList, setVideoList] = useState(
-    videos.slice(1).sort((a, b) => a.timestamp - b.timestamp)
-  );
+  const [videoList, setVideoList] = useState();
 
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);

@@ -8,7 +8,7 @@ export default function VideoComments({ comments }) {
   return (
     <div className="comments">
       <article className="comments__section">
-        <div className="comments__input">
+        <form className="comments__input">
           <h4>{numComments} Comments</h4>
           <div className="comments__input--box">
             <div>
@@ -35,7 +35,7 @@ export default function VideoComments({ comments }) {
               <button className="comments__button"> COMMENT</button>
             </div>
           </div>
-        </div>
+        </form>
 
         {comments.map((comments) => (
           <div key={comments.id} className="comment">
