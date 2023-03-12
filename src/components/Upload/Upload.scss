@@ -14,8 +14,8 @@
   &__input-box {
     padding: 1.5rem 0 0 0;
     @include for--tablet {
-      border-top: 1px solid $BrainFlix-Mercury;
-      border-bottom: 1px solid $BrainFlix-Mercury;
+      border-top: 0.0625rem solid $BrainFlix-Mercury;
+      border-bottom: 0.0625rem solid $BrainFlix-Mercury;
       display: flex;
       padding: 2rem 0;
     }
@@ -27,27 +27,29 @@
 
     &-el {
       width: 97.25%;
-      border: 1px solid $BrainFlix-Silver;
-      border-radius: 4px;
+      border: 0.0625rem solid $BrainFlix-Silver;
+      border-radius: 0.25rem;
       resize: none;
       font-family: "AvenirNextLTPro";
       font-size: 0.875rem;
       color: $BrainFlix-DarkBlack;
+      background-color: $BrainFlix-Alabaster;
 
       margin-top: 0.5rem;
       padding-left: 0.75rem;
       padding-top: 0.75rem;
-      height: 24px;
+      height: 1.5rem;
 
       &-description {
         width: 97.25%;
-        border: 1px solid $BrainFlix-Silver;
-        border-radius: 4px;
+        border: 0.0625rem solid $BrainFlix-Silver;
+        background-color: $BrainFlix-Alabaster;
+        border-radius: 0.25rem;
         resize: none;
         font-family: "AvenirNextLTPro";
         font-size: 0.875rem;
         color: $BrainFlix-DarkBlack;
-  
+
         margin-top: 0.5rem;
         padding-left: 0.75rem;
         padding-top: 0.75rem;
@@ -56,6 +58,13 @@
 
       &::placeholder {
         color: $BrainFlix-DarkBlack;
+      }
+      &:active {
+        border: 0.125rem solid $BrainFlix-Blue;
+      }
+
+      &--error {
+        border: 0.125rem solid $BrainFlix-Red;
       }
     }
   }
@@ -90,24 +99,29 @@
       display: flex;
       align-self: flex-end;
       flex-direction: row;
-      // padding: 1.5rem 0;
+      // padding: 24px 0;
       min-width: 30%;
     }
   }
   &__button {
     &-cancel,
     &-publish {
-      background: url("../../assets/images/Icons/publish.svg") no-repeat 0.5rem
+      background: url("../../assets/images/Icons/publish.svg") no-repeat 8px
         center;
       //width: 100%;
-      min-width: 150px;
-      height: 40px;
+      min-width: 9.375rem;
+      height: 2.5rem;
       margin: 1.5rem 0 0 0;
       background-color: $BrainFlix-Blue;
-      border-radius: 4px;
+      border-radius: 0.25rem;
       border: none;
       color: $BrainFlix-White;
       font-weight: 700;
+      align-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
       &:hover {
         background-color: $BrainFlix-DarkBlue;
       }
@@ -117,11 +131,56 @@
       }
     }
     &-cancel {
+      background: none;
       background-color: $BrainFlix-White;
       color: $BrainFlix-Blue;
-      @include for--tablet {
-        margin-right: 1rem;
+      &:hover {
+        color: $BrainFlix-White;
+        background-color: $BrainFlix-DarkBlue;
       }
+      @include for--tablet {
+        margin-right: 16px;
+      }
+    }
+    &-close {
+      background-image: none;
+      display: initial;
+      margin-top: 0.5rem;
+      width: 8rem;
+      height: 2.5rem;
+      background-color: $BrainFlix-Blue;
+      border-radius: 0.25rem;
+      border: none;
+      color: $BrainFlix-White;
+      font-weight: 700;
+      align-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      &:hover {
+        background-color: $BrainFlix-DarkBlue;
+      }
+    }
+  }
+  &__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    &--content {
+      width: 12.5rem;
+      height: 12rem;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background: white;
+      border: 0.0625rem solid $BrainFlix-DarkBlue;
+      border-radius: 1.5625rem;
+      padding: 0 8px;
     }
   }
 }
