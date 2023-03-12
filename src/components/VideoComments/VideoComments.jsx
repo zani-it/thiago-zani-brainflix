@@ -3,7 +3,7 @@ import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import avatarPlaceHolder from "../../assets/images/placeholder.png";
 
 export default function VideoComments({ comments }) {
-  const numComments = comments.length;
+  const numComments = comments ? comments.length : 0;
 
   return (
     <div className="comments">
@@ -20,7 +20,7 @@ export default function VideoComments({ comments }) {
             </div>
             <div className="comments__input--horizontal">
               <div className="comments__input-streecher">
-                <label for="comment-input" className="comments__label">
+                <label htmlFor="comment-input" className="comments__label">
                   JOIN THE CONVERSATION
                 </label>
                 <textarea
@@ -37,8 +37,8 @@ export default function VideoComments({ comments }) {
           </div>
         </form>
 
-        {comments.map((comments) => (
-          <div key={comments.id} className="comment">
+        {comments && comments.map((comment) => (
+          <div key={comment.id} className="comment">
             <div className="comments__item">
               <img
                 className="comments__avatar"
@@ -47,9 +47,9 @@ export default function VideoComments({ comments }) {
               />
               <div>
                 <div className="comments__header">
-                  <h4>{comments.name}</h4>
+                  <h4>{comment.name}</h4>
                   <div className="comments__date">
-                    {new Date(comments.timestamp).toLocaleDateString("en-US", {
+                    {new Date(comment.timestamp).toLocaleDateString("en-US", {
                       day: "2-digit",
                       month: "2-digit",
                       year: "numeric",
@@ -58,7 +58,7 @@ export default function VideoComments({ comments }) {
                 </div>
 
                 <div>
-                  <p>{comments.comment}</p>
+                  <p>{comment.comment}</p>
                 </div>
               </div>
             </div>
