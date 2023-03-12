@@ -1,6 +1,6 @@
 import React from "react";
-import avatarImage from "..//assets/images/Mohan-muruge.jpg";
-import avatarPlaceHolder from "..//assets/images/placeholder.png";
+import avatarImage from "../../assets/images/Mohan-muruge.jpg";
+import avatarPlaceHolder from "../../assets/images/placeholder.png";
 
 export default function VideoComments({ comments }) {
   const numComments = comments.length;

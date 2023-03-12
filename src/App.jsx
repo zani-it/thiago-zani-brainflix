@@ -3,13 +3,13 @@
 
 import "./App.scss";
 import React, { useState } from "react";
-import VideoList from "./components/VideoList";
-import VideoPlayer from "./components/VideoPlayer";
+import VideoList from "./components/VideoList/VideoList";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import videos from "./data/video-details.json";
 //import VideoDetails from "./data/video-details.json";
-import VideoComments from "./components/VideoComments";
-import NavBar from "./components/NavBar";
-import VideoDetails from "./components/VideoDetails";
+import VideoComments from "./components/VideoComments/VideoComments";
+import NavBar from "./components/NavBar/NavBar";
+import VideoDetails from "./components/VideoDetails/VideoDetails";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);

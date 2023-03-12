@@ -1,6 +1,6 @@
 import React from "react";
-import viewsIcon from "../assets/images/Icons/views.svg";
-import likesIcon from "../assets/images/Icons/likes.svg";
+import viewsIcon from "../../assets/images/Icons/views.svg";
+import likesIcon from "../../assets/images/Icons/likes.svg";
 
 export default function VideoDetails({ video }) {
   return (

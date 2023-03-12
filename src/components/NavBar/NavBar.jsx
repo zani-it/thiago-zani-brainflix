@@ -1,7 +1,6 @@
 import React from "react";
-import navLogo from "../assets/images/Logo/BrainFlix-logo.svg";
-import avatarImage from "..//assets/images/Mohan-muruge.jpg";
-import searchIcon from "../assets/images/Icons/search.svg";
+import navLogo from "../../assets/images/Logo/BrainFlix-logo.svg";
+
 
 export default function NavBar() {
   return (

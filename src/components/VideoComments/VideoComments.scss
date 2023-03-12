@@ -1,5 +1,5 @@
-@use "../styles/partials/mixins" as *;
-@use "../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
 
 .comments {
   font-size: 0.95rem;
@@ -93,7 +93,7 @@
     color: $BrainFlix-Silver;
   }
   &__button {
-    background: url("../assets/images/Icons/add_comment.svg") no-repeat 0.5rem
+    background: url("../../assets/images/Icons/add_comment.svg") no-repeat 0.5rem
       center;
     width: 100%;
     min-width: 150px;
