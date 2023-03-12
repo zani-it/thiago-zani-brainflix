@@ -72,8 +72,12 @@
   }
   &__channel {
     font-weight: 700;
+  
     @include for--tablet {
+      min-width: 7rem;
       margin-right: 2rem;
+      display: flex;
+      align-items: center;
     }
   }
   &__date {
@@ -90,6 +94,10 @@
     @include for--tablet {
       margin: 0 0 0 2rem;
     }
+  }
+  &__views{
+    display: flex;
+    align-items: center;
   }
   &__details {
     &-left {
@@ -111,5 +119,6 @@
     &--icon {
       margin-right: 10px;
     }
+  
   }
 }

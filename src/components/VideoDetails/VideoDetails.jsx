@@ -20,7 +20,7 @@ export default function VideoDetails({ video }) {
           </div>
 
           <div className="video__details-right">
-            <div>
+            <div className="video__views">
               <img
                 alt="views icon"
                 className="video__details--icon"
