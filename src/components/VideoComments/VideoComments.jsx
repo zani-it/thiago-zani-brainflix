@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import avatarPlaceHolder from "../../assets/images/placeholder.png";
 
-export default function VideoComments({ comments }) {
+export default function VideoComments({ comments, video }) {
+  const [setComments] = useState(comments);
+  const [commentText, setCommentText] = useState("");
   const numComments = comments ? comments.length : 0;
+  const apiKey = "6bcd4830-262f-4d29-b9f7-13361fa690f6";
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (commentText.trim() === "") {
+      return;
+    }
+    const comment = {
+      name: "Guest",
+      comment: commentText.trim(),
+    };
+    try {
+      await axios.post(
+        `https://project-2-api.herokuapp.com/videos/${video.id}/comments?api_key=${apiKey}`,
+        comment
+      );
+      const response = await axios.get(
+        `https://project-2-api.herokuapp.com/videos/${video.id}?api_key=${apiKey}`
+      );
+      setComments(response.data.comments);
+      setCommentText("");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="comments">
       <article className="comments__section">
-        <form className="comments__input">
+        <form className="comments__input" onSubmit={handleSubmit}>
           <h4>{numComments} Comments</h4>
           <div className="comments__input--box">
             <div>
@@ -29,6 +57,8 @@ export default function VideoComments({ comments }) {
                   id="comment-input"
                   name="comment box"
                   placeholder="Add a new comment"
+                  value={commentText}
+                  onChange={(event) => setCommentText(event.target.value)}
                 ></textarea>
               </div>
               <span id="form-error"></span>
@@ -37,33 +67,39 @@ export default function VideoComments({ comments }) {
           </div>
         </form>
 
-        {comments && comments.map((comment) => (
-          <div key={comment.id} className="comment">
-            <div className="comments__item">
-              <img
-                className="comments__avatar"
-                src={avatarPlaceHolder}
-                alt="Avatar"
-              />
-              <div>
-                <div className="comments__header">
-                  <h4>{comment.name}</h4>
-                  <div className="comments__date">
-                    {new Date(comment.timestamp).toLocaleDateString("en-US", {
-                      day: "2-digit",
-                      month: "2-digit",
-                      year: "numeric",
-                    })}
+        {comments &&
+          comments
+            .sort((a, b) => b.timestamp - a.timestamp)
+            .map((comment) => (
+              <div key={comment.id} className="comment strecher">
+                <div className="comments__item">
+                  <img
+                    className="comments__avatar"
+                    src={avatarPlaceHolder}
+                    alt="Avatar"
+                  />
+                  <div className="strecher">
+                    <div className="comments__header">
+                      <h4>{comment.name}</h4>
+                      <div className="comments__date">
+                        {new Date(comment.timestamp).toLocaleDateString(
+                          "en-US",
+                          {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "numeric",
+                          }
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p>{comment.comment}</p>
+                    </div>
                   </div>
                 </div>
-
-                <div>
-                  <p>{comment.comment}</p>
-                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ))}
       </article>
     </div>
   );
