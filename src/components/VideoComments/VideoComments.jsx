@@ -20,11 +20,11 @@ export default function VideoComments({ comments }) {
             </div>
             <div className="comments__input--horizontal">
               <div className="comments__input-streecher">
-                <label for="comment-input" class="comments__label">
+                <label for="comment-input" className="comments__label">
                   JOIN THE CONVERSATION
                 </label>
                 <textarea
-                  class="comments__input-el"
+                  className="comments__input-el"
                   type="text"
                   id="comment-input"
                   name="comment box"

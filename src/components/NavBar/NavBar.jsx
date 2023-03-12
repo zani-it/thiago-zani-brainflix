@@ -5,8 +5,10 @@ import navLogo from "../../assets/images/Logo/BrainFlix-logo.svg";
 export default function NavBar() {
   return (
     <nav className="nav">
-      <div class="nav__content">
+      <div className="nav__content">
+        <a href="/">
         <img className="nav__logo" src={navLogo} alt="logo" />
+        </a>
         <div className="nav__input--container">
           <input
             className="nav__input-el"

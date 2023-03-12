@@ -26,7 +26,9 @@
     }
     @include for--desktop {
       width: 80vw;
+      max-width: 1280px;
     }
+  
   }
   &__input--container {
     display: flex;
