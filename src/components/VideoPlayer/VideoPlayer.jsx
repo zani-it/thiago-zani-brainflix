@@ -4,7 +4,6 @@ export default function VideoPlayer({ video }) {
   if (!video) {
     return null;
   }
-
   return (
     <main className="video__section">
       <div className="video__container">
