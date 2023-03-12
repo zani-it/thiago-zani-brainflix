@@ -14,14 +14,19 @@
   }
   &__player {
     width: 100vw;
+    max-height: 50vw;
 
     @include for--tablet {
       width: 90vw;
       position: relative;
+      max-height: 40vw;
+
     }
     @include for--desktop {
       width: 70vw;
       position: relative;
+      max-height: 40vw;
+
     }
   }
   &__card {

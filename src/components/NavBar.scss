@@ -1,5 +1,6 @@
 @use "../styles/partials/mixins" as *;
 @use "../styles/partials/colors" as *;
+@use "../styles/partials/fonts" as *;
 
 .nav {
   @include centered-column;
@@ -85,6 +86,10 @@
     width: 75%;
     margin-right: 1rem;
     color: $BrainFlix-DarkBlack;
+
+    &::placeholder{
+      color: $BrainFlix-DarkBlack;
+    }
     @include for--tablet {
       width: 206px;
     }

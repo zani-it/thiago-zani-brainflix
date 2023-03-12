@@ -3,11 +3,13 @@ import avatarImage from "..//assets/images/Mohan-muruge.jpg";
 import avatarPlaceHolder from "..//assets/images/placeholder.png";
 
 export default function VideoComments({ comments }) {
+  const numComments = comments.length;
+
   return (
     <div className="comments">
       <article className="comments__section">
         <div className="comments__input">
-          <h4>3 Comments</h4>
+          <h4>{numComments} Comments</h4>
           <div className="comments__input--box">
             <div>
               <img

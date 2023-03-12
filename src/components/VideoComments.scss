@@ -39,6 +39,10 @@
       resize: none;
       font-family: "AvenirNextLTPro";
       color: $BrainFlix-DarkBlack;
+      
+        &::placeholder{
+          color: $BrainFlix-DarkBlack;
+        }
 
       @include for--tablet {
         height: 18px;

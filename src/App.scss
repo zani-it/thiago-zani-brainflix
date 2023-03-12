@@ -1,11 +1,13 @@
 @use "./components/VideoPlayer.scss";
 @use "./components/VideoList.scss";
-@use "./styles/global";
+
 @use "./components/NavBar.scss";
-@use "./styles/partials/colors";
+@use "./styles/partials/colors" as*;
 @use "./components/VideoComments.scss";
 @use "./components/VideoDetails.scss";
 @use "./styles/partials/mixins" as *;
+@use "./styles/partials/fonts" as *;
+
 .App {
   text-align: center;
 }
@@ -25,3 +27,34 @@
     }
   }
 }
+
+
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "AvenirNextLTPro", sans-serif;
+  font-weight: 400; /* Light weight */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "AvenirNextLTPro", sans-serif;
+  font-weight: 700; /* Bold weight */
+}
+
+input{
+  ::placeholder{
+    color: $BrainFlix-DarkBlack;
+  }
+}
+

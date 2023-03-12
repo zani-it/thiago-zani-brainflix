@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function VideoPlayer(props) {
-  if (!props.video) {
+export default function VideoPlayer({ video }) {
+  if (!video) {
     return null;
   }
 
@@ -10,8 +10,8 @@ export default function VideoPlayer(props) {
       <div className="video__container">
         <video
           className="video__player"
-          poster={props.video.image}
-          alt={props.video.name}
+          poster={video.image}
+          alt={video.name}
           controls
         ></video>
       </div>
