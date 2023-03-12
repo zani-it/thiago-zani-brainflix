@@ -1,6 +1,5 @@
 import "./App.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Home from "./components/Home/Home";
 import NavBar from "./components/NavBar/NavBar";
 import Upload from "./components/Upload/Upload";
