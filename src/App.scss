@@ -23,9 +23,11 @@
     }
   }
   &__container {
+    max-width: 1280px;
     @include for--desktop {
       width: 80vw;
       display: flex;
+
     }
   }
 }

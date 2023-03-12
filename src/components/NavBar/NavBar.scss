@@ -28,7 +28,6 @@
       width: 80vw;
       max-width: 1280px;
     }
-  
   }
   &__input--container {
     display: flex;
@@ -41,7 +40,8 @@
   }
 
   &__button {
-    background: url("../../assets/images/Icons/upload.svg") no-repeat 0.5rem center;
+    background: url("../../assets/images/Icons/upload.svg") no-repeat 0.5rem
+      center;
     width: 100%;
     min-width: 150px;
     height: 40px;
@@ -51,6 +51,11 @@
     border: none;
     color: $BrainFlix-White;
     font-weight: 700;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
     &:hover {
       background-color: $BrainFlix-DarkBlue;
     }
@@ -71,6 +76,11 @@
       border: none;
       color: $BrainFlix-White;
       font-weight: 700;
+      align-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
       &:hover {
         background-color: $BrainFlix-DarkBlue;
       }
@@ -80,7 +90,8 @@
     }
   }
   &__input-el {
-    background: url("../../assets/images/Icons/search.svg") no-repeat 0.5rem center;
+    background: url("../../assets/images/Icons/search.svg") no-repeat 0.5rem
+      center;
     padding-left: 30px;
     border: 1px solid $BrainFlix-Silver;
     height: 36px;
@@ -89,7 +100,7 @@
     margin-right: 1rem;
     color: $BrainFlix-DarkBlack;
 
-    &::placeholder{
+    &::placeholder {
       color: $BrainFlix-DarkBlack;
     }
     @include for--tablet {
