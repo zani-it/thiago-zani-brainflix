@@ -12,7 +12,7 @@ export default function VideoList({ videos, selectedVideo, onSelectVideo }) {
         <div>
           {filteredVideos.map((video) => (
             <div
-              onClick={() => onSelectVideo(video)}
+              onClick={() => onSelectVideo(video.id, true)}
               className="video__thumb--container"
               key={video.id}>
               <div className="list__item">

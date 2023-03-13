@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import avatarPlaceHolder from "../../assets/images/placeholder.png";
+import { API_KEY } from '../../env';
 
 export default function VideoComments({ comments, video }) {
   const [commentList, setComments] = useState([]);
   const [commentText, setCommentText] = useState("");
   const numComments = comments?.length ?? 0;
-  const apiKey = "6bcd4830-262f-4d29-b9f7-13361fa690f6";
 
   useEffect(() => {
     setComments(comments);
@@ -24,13 +24,10 @@ export default function VideoComments({ comments, video }) {
     };
     try {
       await axios.post(
-        `https://project-2-api.herokuapp.com/videos/${video?.id}/comments?api_key=${apiKey}`,
+        `https://project-2-api.herokuapp.com/videos/${video?.id}/comments?api_key=${API_KEY}`,
         comment
       );
-      const response = await axios.get(
-        `https://project-2-api.herokuapp.com/videos/${video?.id}?api_key=${apiKey}`
-      );
-      setComments(response.data.comments);
+      setComments(prev => [...prev, { ...comment, timestamp: Date.now() }]);
       setCommentText("");
     } catch (error) {
       console.log(error);
