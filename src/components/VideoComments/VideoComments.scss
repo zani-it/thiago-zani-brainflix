@@ -13,7 +13,6 @@
     }
   }
   &__input {
-    @include divider;
     width: 100%;
     &--box {
       display: flex;
@@ -73,10 +72,12 @@
   }
   &__item {
     display: flex;
+    border-top: 1px solid $BrainFlix-Mercury;
+    margin-bottom: -1px;
     @include divider;
     @include for--desktop {
       border-top: 1px solid $BrainFlix-Mercury;
-      margin-top: -1px;
+      margin-bottom: -1px;
       width: 100%;
       padding-right: 1.5rem;
     }
