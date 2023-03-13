@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import VideoList from "../VideoList/VideoList";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import VideoComments from "../VideoComments/VideoComments";
-import VideoDetails from "../VideoDetails/VideoDetails";
+import VideoList from "../../components/VideoList/VideoList";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoComments from "../../components/VideoComments/VideoComments";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import axios from "axios";
 
 function Home() {
