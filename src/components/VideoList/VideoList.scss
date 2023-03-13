@@ -49,9 +49,12 @@
   }
 }
 .list {
+
   @include centered-column;
+  @include for--desktop {
   width: 25vw;
   align-items: start;
+  }
 
 
   &__title {
