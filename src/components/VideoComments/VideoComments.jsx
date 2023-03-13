@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import avatarImage from "../../assets/images/Mohan-muruge.jpg";
 import avatarPlaceHolder from "../../assets/images/placeholder.png";
 
 export default function VideoComments({ comments, video }) {
-  const [setComments] = useState(comments);
+  const [commentList, setComments] = useState([]);
   const [commentText, setCommentText] = useState("");
-  const numComments = comments ? comments.length : 0;
+  const numComments = comments?.length ?? 0;
   const apiKey = "6bcd4830-262f-4d29-b9f7-13361fa690f6";
+
+  useEffect(() => {
+    setComments(comments);
+  }, [comments]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,11 +24,11 @@ export default function VideoComments({ comments, video }) {
     };
     try {
       await axios.post(
-        `https://project-2-api.herokuapp.com/videos/${video.id}/comments?api_key=${apiKey}`,
+        `https://project-2-api.herokuapp.com/videos/${video?.id}/comments?api_key=${apiKey}`,
         comment
       );
       const response = await axios.get(
-        `https://project-2-api.herokuapp.com/videos/${video.id}?api_key=${apiKey}`
+        `https://project-2-api.herokuapp.com/videos/${video?.id}?api_key=${apiKey}`
       );
       setComments(response.data.comments);
       setCommentText("");
@@ -61,14 +65,13 @@ export default function VideoComments({ comments, video }) {
                   onChange={(event) => setCommentText(event.target.value)}
                 ></textarea>
               </div>
-              <span id="form-error"></span>
               <button className="comments__button"> COMMENT</button>
             </div>
           </div>
         </form>
 
-        {comments &&
-          comments
+        {commentList &&
+          commentList
             .sort((a, b) => b.timestamp - a.timestamp)
             .map((comment) => (
               <div key={comment.id} className="comment strecher">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import VideoList from "../VideoList/VideoList";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import VideoComments from "../VideoComments/VideoComments";
@@ -7,7 +7,6 @@ import VideoDetails from "../VideoDetails/VideoDetails";
 import axios from "axios";
 
 function Home() {
-  const { videoId } = useParams();
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [videos, setVideos] = useState([]);
   const navigate = useNavigate();
