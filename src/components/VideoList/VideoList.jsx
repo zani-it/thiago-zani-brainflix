@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function VideoList({ videos, selectedVideo, onSelectVideo }) {
   const filteredVideos = selectedVideo
     ? videos.filter((video) => video.id !== selectedVideo.id)
@@ -15,8 +13,9 @@ export default function VideoList({ videos, selectedVideo, onSelectVideo }) {
           {filteredVideos.map((video) => (
             <div
               onClick={() => onSelectVideo(video)}
-              className="video__thumb--container">
-              <div className="list__item" key={video.id}>
+              className="video__thumb--container"
+              key={video.id}>
+              <div className="list__item">
                 <img
                   className="video__thumb"
                   src={video.image}

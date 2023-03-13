@@ -72,13 +72,15 @@ function Home() {
               />
             </div>
           )}
-          <div>
-            <VideoList
-              videos={videos}
-              selectedId={selectedVideo?.id}
-              onSelectVideo={handleVideoSelect}
-            />
-          </div>
+          {selectedVideo ? (
+            <div>
+              <VideoList
+                videos={videos}
+                selectedVideo={selectedVideo}
+                onSelectVideo={handleVideoSelect}
+              />
+            </div>
+          ) : null}
         </div>
       </section>
     </div>
