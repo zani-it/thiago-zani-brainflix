@@ -69,40 +69,41 @@ export default function VideoComments({ comments, video }) {
             </div>
           </div>
         </form>
-
-        {commentList &&
-          commentList
-            .sort((a, b) => b.timestamp - a.timestamp)
-            .map((comment) => (
-              <div key={comment.id} className="comment strecher">
-                <div className="comments__item">
-                  <img
-                    className="comments__avatar"
-                    src={avatarPlaceHolder}
-                    alt="Avatar"
-                  />
-                  <div className="strecher">
-                    <div className="comments__header">
-                      <h4>{comment.name}</h4>
-                      <div className="comments__date">
-                        {new Date(comment.timestamp).toLocaleDateString(
-                          "en-US",
-                          {
-                            day: "2-digit",
-                            month: "2-digit",
-                            year: "numeric",
-                          }
-                        )}
+        <div className="comments__scroller">
+          {commentList &&
+            commentList
+              .sort((a, b) => b.timestamp - a.timestamp)
+              .map((comment) => (
+                <div key={comment.id} className="comment strecher">
+                  <div className="comments__item">
+                    <img
+                      className="comments__avatar"
+                      src={avatarPlaceHolder}
+                      alt="Avatar"
+                    />
+                    <div className="strecher">
+                      <div className="comments__header">
+                        <h4>{comment.name}</h4>
+                        <div className="comments__date">
+                          {new Date(comment.timestamp).toLocaleDateString(
+                            "en-US",
+                            {
+                              day: "2-digit",
+                              month: "2-digit",
+                              year: "numeric",
+                            }
+                          )}
+                        </div>
                       </div>
-                    </div>
 
-                    <div>
-                      <p>{comment.comment}</p>
+                      <div>
+                        <p>{comment.comment}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+        </div>
       </article>
     </div>
   );
